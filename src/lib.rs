@@ -28,7 +28,7 @@ fn spi_rollback_test() -> Vec<String> {
             )
             .first()
             .get_one::<String>()
-            .unwrap();
+            .expect("errrr");
 
         client.rollback();
 
@@ -38,10 +38,7 @@ fn spi_rollback_test() -> Vec<String> {
     x
 }
 
-// Goal: public.example contains for for title = 'b' but not title = 'a'
-//
-//
-//
+// Goal: Function exits without an error and no record is inserted into `example` table.
 
 use pgx::*;
 
