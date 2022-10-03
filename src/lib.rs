@@ -28,7 +28,7 @@ fn spi_rollback_test() -> Vec<String> {
             )
             .first()
             .get_one::<String>()
-            .expect("errrr");
+            .unwrap();
 
         client.rollback();
 
